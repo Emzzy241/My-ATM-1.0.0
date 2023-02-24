@@ -118,25 +118,23 @@ class MyAtm
                                         Console.WriteLine("Enter 'W' for Withdrawal, Enter 'D' to Deposit.");
                                         string userActivity = Console.ReadLine().ToUpper();
 
+                                        // Now if my user's Pin is a 4 digit, they can use Me ATM Application now
+
                                         switch (userActivity)
                                         {
                                             case "W":
                                                 Console.WriteLine("How Much would you Like to Withdraw today?");
                                                 string userWithdrawal = Console.ReadLine();
 
-                                                Console.WriteLine("You have successfully Withdrawn" + userWithdrawal + ".Thank you very much");
-
-
+                                                Console.WriteLine("You have successfully Withdrawn $" + userWithdrawal + ".Thank you very much :) ");
 
                                                 break;
 
                                             case "D":
-                                                Console.WriteLine("How Much would you Like to witDeposithdraw today?");
+                                                Console.WriteLine("How Much would you Like to Deposit today?");
                                                 string userDeposit = Console.ReadLine();
 
-                                                Console.WriteLine("You have successfully Deposited" + userDeposit + ".Thank you very much");
-
-
+                                                Console.WriteLine("You have successfully Deposited $" + userDeposit + ".Thank you very much :) ");
 
                                                 break;
                                         }
@@ -149,17 +147,10 @@ class MyAtm
                                 }
 
                                 break;
-
-                            case > 10:
-                                Console.WriteLine("Dear User, the input you gave our App is more than 10 digit, please check again and ensure its 10 digits as a Credit Card can only be 10 digit");
-                                string secondCreditCardInput = Console.ReadLine();
-
-
-                                break;
-
-
-                            default:
-
+                               
+                                default: 
+                                    // running the Main() method again if user enters a credit card digit thats either more than 10 or less than 10
+                                    Main();
                                 break;
                         }
 
@@ -178,10 +169,12 @@ class MyAtm
 
                 break;
 
-            case "N":
+            default:
+                // running the Main() method if user enters another value apart from "Y" it can be either an "N" or any other thing
                 Main();
 
                 break;
+
         }
     }
 }
