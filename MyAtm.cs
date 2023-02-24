@@ -38,7 +38,7 @@ class MyAtm
         Console.WriteLine();
         Console.WriteLine();
 
-        Console.WriteLine("Then you will be Prompted to enter in your PIN. NOTE: Every PIN is 4 digit");
+        Console.WriteLine("Then you will be Prompted to enter in your PIN. NOTE: Every PIN is 4 digits both for Debit and Credit Cards");
 
         Console.WriteLine();
         Console.WriteLine();
@@ -83,15 +83,60 @@ class MyAtm
                         Console.WriteLine("Please input the 10 digits of your Credit card");
 
                         // Another string variable to take the 10 digit for me User's credit card
-                        string userCreditCardString = Console.ReadLine().ToUpper();
+                        string userCreditCardString = Console.ReadLine();
 
                         // I want to use this string to determine if I was given a 10 digit value by me user before I convert it to a double
+                        // the .Length Property counts the strng for me and gives me how many chaacters exist in a string
 
-                        switch (userCreditCardNumber)
+                        int checkUserCreditCardStringDigitIsTen = userCreditCardString.Length;
+
+                        switch (checkUserCreditCardStringDigitIsTen)
                         {
-                            case :
+                            case 10:
+                            // Immediately My users digit is 10; I know its a Credit card and I also need to change it into a double right away
+                                // double userCreditCardNumber = double.Parse(userCreditCardString);
+
+                                // Now I have a 10 digit Number for my Users Credit Card
+
+                                Console.WriteLine("You have successfully inputted a valid Credit card");
+                                Console.WriteLine("Please input your 4 digit PIN");
+
+                                string userPinInString = Console.ReadLine();
+
+                                int checkUserPinIsFourDigit = userPinInString.Length;
+                                
+                                switch (checkUserPinIsFourDigit)
+                                {
+                                    case 4:
+                                        Console.WriteLine("Yay! You have just Inputted in the right Pin");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Welcome User, What would you like to do today?");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        // due to App not having a deatabase, Users can only withdraw and deposit for now
+                                        Console.WriteLine("Enter 'W' for Withdrawal, Enter 'D' to Deposit.");
+                                        string userActivity = Console.ReadLine();
+
+                                        break;
+                                    
+                                    default:
+                                    break;
+                                }
+
+                                break;
+
+                            case > 10:
+                                Console.WriteLine("Dear User, the input you gave our App is more than 10 digit, please check again and ensure its 10 digits as a Credit Card can only be 10 digit");
+                                string secondCreditCardInput = Console.ReadLine();
+
+                                
+                                break;
+
 
                             default:
+
+                            break;
                         }
 
                         // using a double datatype and converting the string to store me users 10 digit credit card
@@ -103,11 +148,15 @@ class MyAtm
 
 
                     default:
+                    
+                    break;
                 }
 
                 break;
 
             default:
+
+            break;
         }
     }
 }
