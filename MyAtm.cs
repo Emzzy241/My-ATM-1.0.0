@@ -13,7 +13,7 @@ For a more complicated Program include the ability to register a new PIN and mob
 
 
 
-
+// DONE WITH APPLICATION FOR NOW,Expect More updates soon... The above aims for this App must still be satisfied
 
 
 using System;
@@ -108,10 +108,10 @@ class MyAtm
                                 switch (checkUserPinIsFourDigit)
                                 {
                                     case 4:
-                                        Console.WriteLine("Yay! You have just Inputted in the right Pin");
+                                        Console.WriteLine("Yay! You have just Inputted in the right Pin for your Crddit Card");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("Welcome User, What would you like to do today?");
+                                        Console.WriteLine("Welcome User To your Credit Card Menu, What would you like to do today?");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         // due to App not having a deatabase, Users can only withdraw and deposit for now
@@ -137,21 +137,27 @@ class MyAtm
                                                 Console.WriteLine("You have successfully Deposited $" + userDeposit + " into your Credit card.Thank you very much :) ");
 
                                                 break;
+
+                                            // running the Main() method again if User doesn't input a "D" for debit card or a "C" for credit card
+                                            default:
+                                                Main();
+                                                break;
                                         }
 
 
                                         break;
 
                                     default:
+                                        Main();
                                         break;
                                 }
 
-                            break;
+                                break;
 
                             default:
                                 // running the Main() method again if user enters a credit card digit thats either more than 10 or less than 10
                                 Main();
-                            break;
+                                break;
                         }
 
                         // using a double datatype and converting the string to store me users 10 digit credit card
@@ -159,7 +165,7 @@ class MyAtm
 
                         // determining whether I was given a 10 digit value so I can proceed with the next step of my application
 
-                    break;
+                        break;
 
 
                     case "D":
@@ -173,7 +179,7 @@ class MyAtm
 
                         int checkUserDebitCardStringDigitIsTen = userDebitCardString.Length;
 
-                        
+
                         switch (checkUserDebitCardStringDigitIsTen)
                         {
                             case 15:
@@ -192,10 +198,10 @@ class MyAtm
                                 switch (checkUserDebitPinIsFourDigit)
                                 {
                                     case 4:
-                                        Console.WriteLine("Yay! You have just Inputted in the right Pin");
+                                        Console.WriteLine("Yay! You have just Inputted in the right Pin for your Debit Card");
                                         Console.WriteLine();
                                         Console.WriteLine();
-                                        Console.WriteLine("Welcome User, What would you like to do today?");
+                                        Console.WriteLine("Welcome User To your Debit Card Menu, What would you like to do today?");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         // due to App not having a deatabase, Users can only withdraw and deposit for now
@@ -222,34 +228,40 @@ class MyAtm
                                                 Console.WriteLine("You have successfully Deposited $" + userDeposit + " into your Debit Card.Thank you very much :) ");
 
                                                 break;
+                                            // running the Main() method again if User doesn't input a "D" for debit card or a "C" for credit card
+                                            default:
+                                                Main();
+                                                break;
+
                                         }
 
 
                                         break;
 
                                     default:
+                                        Main();
 
-                                    break;
+                                        break;
                                 }
 
-                            break;
+                                break;
 
                             default:
                                 // running the Main() method again if user enters a debit card digit thats either more than 10 or less than 10
                                 Main();
-                            break;
+                                break;
                         }
 
 
 
 
 
-                    break;
+                        break;
 
                     default:
                         // running the Main() method to restart App if user enters a value different from "C"(credit card) and "D"(debit card)
                         Main();
-                    break;
+                        break;
                 }
 
                 break;
@@ -263,3 +275,4 @@ class MyAtm
         }
     }
 }
+
