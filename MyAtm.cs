@@ -93,7 +93,7 @@ class MyAtm
                         switch (checkUserCreditCardStringDigitIsTen)
                         {
                             case 10:
-                            // Immediately My users digit is 10; I know its a Credit card and I also need to change it into a double right away
+                                // Immediately My users digit is 10; I know its a Credit card and I also need to change it into a double right away
                                 // double userCreditCardNumber = double.Parse(userCreditCardString);
 
                                 // Now I have a 10 digit Number for my Users Credit Card
@@ -104,7 +104,7 @@ class MyAtm
                                 string userPinInString = Console.ReadLine();
 
                                 int checkUserPinIsFourDigit = userPinInString.Length;
-                                
+
                                 switch (checkUserPinIsFourDigit)
                                 {
                                     case 4:
@@ -116,12 +116,36 @@ class MyAtm
                                         Console.WriteLine();
                                         // due to App not having a deatabase, Users can only withdraw and deposit for now
                                         Console.WriteLine("Enter 'W' for Withdrawal, Enter 'D' to Deposit.");
-                                        string userActivity = Console.ReadLine();
+                                        string userActivity = Console.ReadLine().ToUpper();
+
+                                        switch (userActivity)
+                                        {
+                                            case "W":
+                                                Console.WriteLine("How Much would you Like to Withdraw today?");
+                                                string userWithdrawal = Console.ReadLine();
+
+                                                Console.WriteLine("You have successfully Withdrawn" + userWithdrawal + ".Thank you very much");
+
+
+
+                                                break;
+
+                                            case "D":
+                                                Console.WriteLine("How Much would you Like to witDeposithdraw today?");
+                                                string userDeposit = Console.ReadLine();
+
+                                                Console.WriteLine("You have successfully Deposited" + userDeposit + ".Thank you very much");
+
+
+
+                                                break;
+                                        }
+
 
                                         break;
-                                    
+
                                     default:
-                                    break;
+                                        break;
                                 }
 
                                 break;
@@ -130,13 +154,13 @@ class MyAtm
                                 Console.WriteLine("Dear User, the input you gave our App is more than 10 digit, please check again and ensure its 10 digits as a Credit Card can only be 10 digit");
                                 string secondCreditCardInput = Console.ReadLine();
 
-                                
+
                                 break;
 
 
                             default:
 
-                            break;
+                                break;
                         }
 
                         // using a double datatype and converting the string to store me users 10 digit credit card
@@ -148,15 +172,16 @@ class MyAtm
 
 
                     default:
-                    
-                    break;
+
+                        break;
                 }
 
                 break;
 
-            default:
+            case "N":
+                Main();
 
-            break;
+                break;
         }
     }
 }
