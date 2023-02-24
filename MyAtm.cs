@@ -116,17 +116,17 @@ class MyAtm
                                         Console.WriteLine();
                                         // due to App not having a deatabase, Users can only withdraw and deposit for now
                                         Console.WriteLine("Enter 'W' for Withdrawal, Enter 'D' to Deposit.");
-                                        string userActivity = Console.ReadLine().ToUpper();
+                                        string userCreditActivity = Console.ReadLine().ToUpper();
 
                                         // Now if my user's Pin is a 4 digit, they can use Me ATM Application now
 
-                                        switch (userActivity)
+                                        switch (userCreditActivity)
                                         {
                                             case "W":
                                                 Console.WriteLine("How Much would you Like to Withdraw today?");
                                                 string userWithdrawal = Console.ReadLine();
 
-                                                Console.WriteLine("You have successfully Withdrawn $" + userWithdrawal + ".Thank you very much :) ");
+                                                Console.WriteLine("You have successfully Withdrawn $" + userWithdrawal + " From your Credit card.Thank you very much :) ");
 
                                                 break;
 
@@ -134,7 +134,7 @@ class MyAtm
                                                 Console.WriteLine("How Much would you Like to Deposit today?");
                                                 string userDeposit = Console.ReadLine();
 
-                                                Console.WriteLine("You have successfully Deposited $" + userDeposit + ".Thank you very much :) ");
+                                                Console.WriteLine("You have successfully Deposited $" + userDeposit + " into your Credit card.Thank you very much :) ");
 
                                                 break;
                                         }
@@ -146,12 +146,12 @@ class MyAtm
                                         break;
                                 }
 
-                                break;
-                               
-                                default: 
-                                    // running the Main() method again if user enters a credit card digit thats either more than 10 or less than 10
-                                    Main();
-                                break;
+                            break;
+
+                            default:
+                                // running the Main() method again if user enters a credit card digit thats either more than 10 or less than 10
+                                Main();
+                            break;
                         }
 
                         // using a double datatype and converting the string to store me users 10 digit credit card
@@ -159,12 +159,97 @@ class MyAtm
 
                         // determining whether I was given a 10 digit value so I can proceed with the next step of my application
 
-                        break;
+                    break;
 
+
+                    case "D":
+                        Console.WriteLine("You have just indicated that you would be using a Debit card");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Please input the 15 digits of your Debit card");
+
+                        // A string variable to take the 15 digit for me User's Debit card
+                        string userDebitCardString = Console.ReadLine();
+
+                        int checkUserDebitCardStringDigitIsTen = userDebitCardString.Length;
+
+                        
+                        switch (checkUserDebitCardStringDigitIsTen)
+                        {
+                            case 15:
+                                // Immediately My users digit is 15; I know its a debit card and I also need to change it into a double right away
+                                // double userCreditCardNumber = double.Parse(userCreditCardString);
+
+                                // Now I have a 10 digit Number for my Users Credit Card
+
+                                Console.WriteLine("You have successfully inputted a valid Credit card");
+                                Console.WriteLine("Please input your 4 digit PIN");
+
+                                string userDebitPinInString = Console.ReadLine();
+
+                                int checkUserDebitPinIsFourDigit = userDebitPinInString.Length;
+
+                                switch (checkUserDebitPinIsFourDigit)
+                                {
+                                    case 4:
+                                        Console.WriteLine("Yay! You have just Inputted in the right Pin");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Welcome User, What would you like to do today?");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        // due to App not having a deatabase, Users can only withdraw and deposit for now
+                                        Console.WriteLine("Enter 'W' for Withdrawal, Enter 'D' to Deposit.");
+                                        string userDebitActivity = Console.ReadLine().ToUpper();
+
+                                        // Now if my user's Pin is a 4 digit, they can use Me ATM Application now
+
+                                        switch (userDebitActivity)
+                                        {
+                                            case "W":
+                                                Console.WriteLine("How Much would you Like to Withdraw today?");
+                                                // userBorrow; when using a debit card, you borrow money
+                                                string userBorrow = Console.ReadLine();
+
+                                                Console.WriteLine("You have successfully Borrwod $" + userBorrow + " from your Debit Card.Thank you very much :) ");
+
+                                                break;
+
+                                            case "D":
+                                                Console.WriteLine("How Much would you Like to Deposit today?");
+                                                string userDeposit = Console.ReadLine();
+
+                                                Console.WriteLine("You have successfully Deposited $" + userDeposit + " into your Debit Card.Thank you very much :) ");
+
+                                                break;
+                                        }
+
+
+                                        break;
+
+                                    default:
+
+                                    break;
+                                }
+
+                            break;
+
+                            default:
+                                // running the Main() method again if user enters a debit card digit thats either more than 10 or less than 10
+                                Main();
+                            break;
+                        }
+
+
+
+
+
+                    break;
 
                     default:
-
-                        break;
+                        // running the Main() method to restart App if user enters a value different from "C"(credit card) and "D"(debit card)
+                        Main();
+                    break;
                 }
 
                 break;
