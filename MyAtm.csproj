@@ -1,0 +1,16 @@
+<!-- REUSING THE BOILER PLATE WE HAVE USED IN PREVIOUS APPLICATIONS -->
+
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+</Project>
+
+
+
+<!-- the first line of code above tells the compiler we are using a "Microsoft.NET.Sdk", a software development Kit
+which contains the C# language and many libraries of information -->
+<!-- the next line of code we tell the runtime that we would like an executable, or Exe output; meaning a program that can be run -->
+<!-- Finrally in the TargetFramework tag, we specify that we will be using the .net6.0 framework, which contains a lot of our code libraries -->
